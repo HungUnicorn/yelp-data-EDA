@@ -24,6 +24,14 @@ Also, if you download the newest data set from yelp,
 the ingestion fails, probably due to the change of the data format.
 To fix it you would need to fix the code in the pipeline folder
 
+### Ignore login
+You need to ignore token in this line
+https://github.com/javrasya/yelp-data/blob/master/start-all.sh#L48
+
+by
+```    
+docker run $_daemonize --name yelp_data_platform -p 8888:8888 --volume $TAR_FILE:/usr/lib/yelp_data/yelp_dataset.tar --network yelp_data_platform ahmetdal/yelp-data-platform start-notebook.sh --NotebookApp.token=''
+```
 ## Demo Example
 The motivation comes from challenging one conclusion of
 https://github.com/backedwith/SQL---Yelp-Database-Analysis/blob/master/YelpDataCourseraPR.txt#L258
