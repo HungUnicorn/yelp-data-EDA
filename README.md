@@ -56,6 +56,3 @@ To fix it you would need to fix the code in the pipeline folder
 The motivation comes from challenging one conclusion of
 https://github.com/backedwith/SQL---Yelp-Database-Analysis/blob/master/YelpDataCourseraPR.txt#L258
 saying `Including number of fans in data set indicates that there is no correlation between review count and number of fans`, and my investigation shows the correlation is quite high based on Spearman correlation coefficient.
-
-## another-yelp-data-platform
-It writes data to cassandra using java
