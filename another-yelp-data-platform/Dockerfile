@@ -1,4 +1,4 @@
-FROM bde2020/spark-java-template:1.5.1-hadoop2.6
+FROM bde2020/spark-java-template:2.3.2-hadoop2.7
 
 ENV SPARK_APPLICATION_JAR_NAME yelp-data-pipeline-0.0.1-SNAPSHOT
 ENV SPARK_APPLICATION_MAIN_CLASS org.sendoh.YelpDataPipelineApplication

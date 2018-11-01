@@ -2,6 +2,13 @@
 A demo shows how to explore data through Spark and Cassandra
 
 ## another-yelp-data-platform
+It contains a spark job to write files into cassandra, and jupyter notebook environment for querying data in cassandra. the spark docker environment setup refers to https://github.com/big-data-europe/docker-spark
+
+### How to run
+- run `docker-compose`
+- `docker build` to build an image contains spark job
+- `docker run --network=docker-spark_default --name my_container -e ENABLE_INIT_DAEMON=false my_image` this can optionally accepts an environment variable `SPARK_APPLICATION_ARGS` pointing to the folder of yelp data files.
+by default it uses the sample data taken by `head -n 1000`, which is the first 1000 lines of data
 
 
 ## Yelp-data-platform
