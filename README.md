@@ -1,7 +1,11 @@
 # yelp-data-EDA
 A demo shows how to explore data through Spark and Cassandra
 
-## Motivation
+## another-yelp-data-platform
+
+
+## Yelp-data-platform
+### Motivation
 When starting to find how people use Spark and Cassandra to explore yelp data set
 https://www.yelp.com/dataset,
 I found https://github.com/javrasya/yelp-data already includes a platform, including
@@ -23,7 +27,7 @@ docker run $_daemonize --name yelp_data_platform -p 8888:8888 --volume $TAR_FILE
 ```
 
 
-## How to run
+### How to run
 - cd to yelp-data-platform
 - run `start-all.sh`, it will start jupyter environment and cassandra
 - after jupyter notebook is available at `localhost:8888`, run
@@ -42,3 +46,6 @@ To fix it you would need to fix the code in the pipeline folder
 The motivation comes from challenging one conclusion of
 https://github.com/backedwith/SQL---Yelp-Database-Analysis/blob/master/YelpDataCourseraPR.txt#L258
 saying `Including number of fans in data set indicates that there is no correlation between review count and number of fans`, and my investigation shows the correlation is quite high based on Spearman correlation coefficient.
+
+## another-yelp-data-platform
+It writes data to cassandra using java

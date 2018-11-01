@@ -31,7 +31,7 @@ public class FileSource {
             return args[0];
         } else {
             return Paths
-                    .get(Objects.requireNonNull(YelpDataPipelineApplication.class.getClassLoader()
+                    .get(Objects.requireNonNull(FileSource.class.getClassLoader()
                             .getResource("sample")).toURI()).toString();
         }
     }

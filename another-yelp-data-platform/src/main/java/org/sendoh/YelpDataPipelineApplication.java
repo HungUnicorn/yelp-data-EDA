@@ -1,23 +1,11 @@
 package org.sendoh;
 
-import com.datastax.driver.core.Session;
-import com.datastax.spark.connector.cql.CassandraConnector;
-import com.datastax.spark.connector.writer.WriteConf;
-import org.apache.spark.SparkConf;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SaveMode;
 import org.apache.spark.sql.SparkSession;
 
-import com.datastax.spark.connector.*;
-import org.apache.spark.sql.cassandra.*;
-
-import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.nio.file.Paths;
-import java.util.Objects;
-import java.util.Optional;
 
 
 /**
@@ -32,7 +20,7 @@ public class YelpDataPipelineApplication {
                 .builder()
                 .appName("yelp-data-pipeline")
                 .config("spark.cassandra.connection.host", cassandraHost)
-                .config("spark.master", "local")
+                .config("spark.master", System.getenv("SPARK_MASTER_URL"))
                 .getOrCreate();
 
         DataSink sink = new CassandraSink(ss.sparkContext().getConf());
