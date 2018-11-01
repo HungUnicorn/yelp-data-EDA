@@ -10,6 +10,9 @@ It contains a spark job to write files into cassandra, and jupyter notebook envi
 - `docker run --network=docker-spark_default --name my_container -e ENABLE_INIT_DAEMON=false my_image` this can optionally accept an environment variable `SPARK_APPLICATION_ARGS` pointing to the folder of yelp data files.
 by default it uses the sample data taken by `head -n 1000`, which is the first 1000 lines of yelp data files
 
+### Explaination
+Writing to cassandra has to create schema first. This is controlled by the spark job. The schema.cql is put in main/resoures, and the 
+CassandraSink controls the behaviour of creating schema and writes.
 
 ## Yelp-data-platform
 ### Motivation
